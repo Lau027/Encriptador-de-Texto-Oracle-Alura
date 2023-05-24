@@ -34,7 +34,7 @@ body{
     margin: auto;
 }
 
-.textarea{
+.ingreso-texto{
     color: #0A3871;
     background-color: #F3F5FC;
     outline: none;
@@ -67,7 +67,7 @@ body{
     display: flex;
 }
 
-.botonencriptar, .botondesencriptar, .botoncopiar{
+.boton-encriptar, .boton-desencriptar, .boton-copiar{
     height: 70px;
     max-width: 350px;
     width: 50%;
@@ -76,24 +76,24 @@ body{
     cursor: pointer;
 }
 
-.botonencriptar{
+.boton-encriptar{
     background: linear-gradient(#F3F5FC, #0A3871);
     border: 1px solid #0A3871;
     color:#FFFFFF;
 }
 
-.botonencriptar:hover{
+.boton-encriptar:hover{
     font-size: 22px;
     transition: 0.5s;
 }
 
-.botondesencriptar{
+.boton-desencriptar{
     background: linear-gradient(#FFFFFF, #CCCCCC);
     border: 1px solid #0A3871;
     color:#0A3871;
 }
 
-.botondesencriptar:hover{
+.boton-desencriptar:hover{
     font-size: 22px;
     transition: 0.5s;
 }
@@ -114,27 +114,27 @@ body{
     margin-bottom: 20px;
 }
 
-.salidamensaje{
+.salida-mensaje{
     font-size: 24px;
     gap: 16px;
     text-align: center;
     font-weight: bold;
 }
 
-.mensajeinformacion{
+.mensaje-informacion{
     text-align: center;
     font-size: 16px;
     font-weight: normal;
 }
 
-.botoncopiar{
+.boton-copiar{
     background: linear-gradient(#FFFFFF, #CCCCCC);
     border: 1px solid #0A3871;
     color:#0A3871;
     width: 100%;
 }
 
-.botoncopiar:hover{
+.boton-copiar:hover{
     font-size: 25px;
     transition: 0.5s;
 }
@@ -169,7 +169,7 @@ footer{
         height: 90%;
     }
 
-    .textarea{
+    .ingreso-texto{
         margin-top: 20px;
     }
 
@@ -178,7 +178,7 @@ footer{
         height: 90%;
     }
 
-    .muñeco{
+    #dibujo{
         display: none;
     }
 
@@ -195,7 +195,7 @@ footer{
         gap: 10px
     }
 
-    .botonencriptar, .botondesencriptar{
+    .boton-encriptar, .boton-desencriptar{
         width: 100%;
     }
 
