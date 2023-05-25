@@ -1,34 +1,66 @@
 // REQUISITOS
 
-// no debe aceptar letas con acentos ni caracteres especiales
+// no debe aceptar letras con acentos ni caracteres especiales
 
-// Debe ser posible convertir una palabra para la versión encriptada también devolver una palabra encriptada para su versión original.
-//   "gato" => "gaitober"
-//    gaitober" => "gato" 
-
-// La página debe tener campos para inserción del texto que será encriptado o desencriptado, y el usuario debe poder escoger entre as dos opciones.
- 
-// Un botón que copie el texto encriptado/desencriptado para la sección de transferencia, o sea que tenga la misma funcionalidad del ctrl+C o de la opción "copiar" del menú de las aplicaciones.
-
-
-let llaves = {
-    "e": "enter",
-    "i": "imes",
-    "a": "ai",
-    "o": "ober",
-    "u": "ufat"
-}
-   
 const ingresoTexto = document.getElementById("ingreso-texto")
 const botonEncriptar = document.getElementById("boton-encriptar")
 const botonDesencriptar = document.getElementById("boton-desencriptar")
 const botonCopiar = document.getElementById("boton-copiar")
 
+function encriptar(){
 
-function ocultardibujo() {
+    let llaves = [
+        ["e", "enter"],
+        ["i", "imes"],
+        ["a", "ai"],
+        ["o", "ober"],
+        ["u", "ufat"]
+    ]
+
+    const texto = ingresoTexto.value.toLowerCase();
+    var nuevoTexto = texto;
+
+    for (i = 0; i < llaves.length; i++){
+        nuevoTexto = nuevoTexto.replaceAll(llaves[i][0],llaves[i][1]);
+    }
+
+    document.getElementById("salida-mensaje").innerHTML = nuevoTexto;
+    document.getElementById("salida-mensaje").style.height = "80%";
+    document.getElementById("salida-mensaje").style.textAlign = "start";
     document.getElementById("dibujo").style.display = "none";
+    document.getElementById("boton-copiar").style.display = "block";
+    document.getElementById("mensaje-informacion").style.display = "none";
 }
 
+function desencriptar(){
 
-botonEncriptar.addEventListener("click", ocultardibujo)
+    let llaves = [
+        ["enter", "e"],
+        ["imes", "i"],
+        ["ai", "a"],
+        ["ober", "o"],
+        ["ufat", "u"]
+    ]
+    const texto = ingresoTexto.value.toLowerCase();
+    var nuevoTexto = texto;
+
+    for (i = 0; i < llaves.length; i++){
+        nuevoTexto = nuevoTexto.replaceAll(llaves[i][0],llaves[i][1]);
+    }
+
+    document.getElementById("salida-mensaje").innerHTML = nuevoTexto;
+    document.getElementById("salida-mensaje").style.height = "80%";
+    document.getElementById("salida-mensaje").style.textAlign = "start";
+    document.getElementById("dibujo").style.display = "none";
+    document.getElementById("boton-copiar").style.display = "block";
+    document.getElementById("mensaje-informacion").style.display = "none";
+    document.getElementById("mensaje-informacion").style.display = "none";
+}
+
+function limpiarCampo(){
+    ingresoTexto.value = " ";
+}
+
+ingresoTexto.addEventListener("click", limpiarCampo)
+    
 

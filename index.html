@@ -26,15 +26,15 @@
                     <p class="informacion">Solo letras minúsculas y sin acentos</p>
                 </div>
                 <div class="botones">
-                    <button class="boton-encriptar" id="boton-encriptar">Encriptar</button>
-                    <button class="boton-desencriptar" id="boton-desencriptar">Desencriptar</button>
+                    <button class="boton-encriptar" id="boton-encriptar" onclick="encriptar()">Encriptar</button>
+                    <button class="boton-desencriptar" id="boton-desencriptar" onclick="desencriptar()">Desencriptar</button>
                 </div>  
             </div>
-            <div class="section2">
+            <div class="section2" id="seccion2">
                 <img id="dibujo" src="imagenes/Muñeco.png" alt="dibujo">
-                <p class="salida-mensaje" id="salida-mensaje">Ningún mensaje fue encontrado</p>
-                <p class="mensaje-informacion">Ingrese el texto que desees encriptar o desencriptar.</p>
-                <button class="boton-copiar oculto" id="boton-copiar">Copiar</button>
+                <textarea class="salida-mensaje" id="salida-mensaje" readonly>Ningún mensaje fue encontrado</textarea>
+                <p class="mensaje-informacion" id="mensaje-informacion">Ingrese el texto que desees encriptar o desencriptar.</p>
+                <button class="boton-copiar" id="boton-copiar">Copiar</button>
             </div>
          </main>
         <footer>
