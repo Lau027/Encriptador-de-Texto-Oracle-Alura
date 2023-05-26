@@ -3,9 +3,6 @@
 // no debe aceptar letras con acentos ni caracteres especiales
 
 const ingresoTexto = document.getElementById("ingreso-texto")
-const botonEncriptar = document.getElementById("boton-encriptar")
-const botonDesencriptar = document.getElementById("boton-desencriptar")
-const botonCopiar = document.getElementById("boton-copiar")
 
 function encriptar(){
 
@@ -54,13 +51,20 @@ function desencriptar(){
     document.getElementById("dibujo").style.display = "none";
     document.getElementById("boton-copiar").style.display = "block";
     document.getElementById("mensaje-informacion").style.display = "none";
-    document.getElementById("mensaje-informacion").style.display = "none";
 }
 
-function limpiarCampo(){
+function copiar(){
+
+    var contenido = document.getElementById("salida-mensaje");
+    navigator.clipboard.writeText(contenido.innerHTML)
+}
+
+ingresoTexto.addEventListener("click", ()=>{
     ingresoTexto.value = " ";
-}
-
-ingresoTexto.addEventListener("click", limpiarCampo)
-    
-
+    document.getElementById("dibujo").style.display = "block";
+    document.getElementById("boton-copiar").style.display = "none";
+    document.getElementById("mensaje-informacion").style.display = "block";
+    document.getElementById("salida-mensaje").style.textAlign = "center";
+    document.getElementById("salida-mensaje").textContent = "Ningún mensaje fue encontrado";
+    document.getElementById("salida-mensaje").style.height = "auto";
+})

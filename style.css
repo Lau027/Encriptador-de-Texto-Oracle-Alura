@@ -83,8 +83,8 @@ body{
 }
 
 .boton-encriptar:hover{
-    font-size: 22px;
     transition: 0.5s;
+    transform: scale(1.05);
 }
 
 .boton-desencriptar{
@@ -94,8 +94,8 @@ body{
 }
 
 .boton-desencriptar:hover{
-    font-size: 22px;
     transition: 0.5s;
+    transform: scale(1.05);
 }
 
 .section2{
@@ -140,8 +140,8 @@ body{
 }
 
 .boton-copiar:hover{
-    font-size: 25px;
     transition: 0.5s;
+    transform: scale(1.05);
 }
 
 footer{
