@@ -13,14 +13,12 @@ function encriptar(){
         ["o", "ober"],
         ["u", "ufat"]
     ]
-
     const texto = ingresoTexto.value.toLowerCase();
     var nuevoTexto = texto;
-
     for (i = 0; i < llaves.length; i++){
         nuevoTexto = nuevoTexto.replaceAll(llaves[i][0],llaves[i][1]);
     }
-
+    
     document.getElementById("salida-mensaje").innerHTML = nuevoTexto;
     document.getElementById("salida-mensaje").style.height = "80%";
     document.getElementById("salida-mensaje").style.textAlign = "start";
@@ -68,3 +66,11 @@ ingresoTexto.addEventListener("click", ()=>{
     document.getElementById("salida-mensaje").textContent = "Ningún mensaje fue encontrado";
     document.getElementById("salida-mensaje").style.height = "auto";
 })
+
+botonEncriptar = document.getElementById("boton-encriptar")
+
+if (texto != ""){
+    botonEncriptar.addEventListener("click", encriptar)
+} else {
+    console.log("error")
+}
