@@ -21,13 +21,13 @@
         </header>
         <main class="contenedores">
             <div class="section1">
-                <textarea class="ingreso-texto" id="ingreso-texto" placeholder="Ingrese el texto aquí"></textarea>  
+                <textarea class="ingreso-texto" id="ingreso-texto" placeholder="Ingrese el texto aquí" onkeypress="return ((event.charCode >= 48 && event.charCode <= 57) || (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))"></textarea>  
                 <div class="alerta">
                     <p class="informacion">Solo letras minúsculas y sin acentos</p>
                 </div>
                 <div class="botones">
-                    <button class="boton-encriptar" id="boton-encriptar" onclick="encriptar()">Encriptar</button>
-                    <button class="boton-desencriptar" id="boton-desencriptar" onclick="desencriptar()">Desencriptar</button>
+                    <button class="boton-encriptar" id="boton-encriptar" onclick="botonEncriptar()">Encriptar</button>
+                    <button class="boton-desencriptar" id="boton-desencriptar" onclick="botonDesencriptar()">Desencriptar</button>
                 </div>  
             </div>
             <div class="section2" id="seccion2">
@@ -39,7 +39,7 @@
          </main>
         <footer>
             <p>Laura Rodríguez Simanca</p>
-            <p>Oracle Next Education + Alura Latam Grupo N°5</p>
+            <p>Oracle Next Education + Alura Latam Grupo N°5 # 2023</p>
         </footer>
      </body>
      <script src="script.js"></script>
