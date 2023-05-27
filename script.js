@@ -57,5 +57,9 @@ function copiar(){
 
     var contenido =  salidaMensaje;
     navigator.clipboard.writeText(contenido.value);
-    ingresoTexto.value = " ";
+    ingresoTexto.value = "Ingrese el texto aquí"
 }
+
+ingresoTexto.addEventListener("click", () =>{
+    ingresoTexto.value = " ";
+})
