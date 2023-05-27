@@ -1,17 +1,14 @@
-let ingresoTexto = document.getElementById("ingreso-texto");
-let salidaMensaje = document.getElementById("salida-mensaje");
-
+var ingresoTexto = document.getElementById("ingreso-texto");
+var salidaMensaje = document.getElementById("salida-mensaje");
+var llaves = [["e", "enter"],["i", "imes"],["a", "ai"],["o", "ober"],["u", "ufat"]];
 
 function encriptar(mensaje){
 
-    let llaves = [["e", "enter"],["i", "imes"],["a", "ai"],["o", "ober"],["u", "ufat"]];
-    const mensajeEncriptado = ingresoTexto.value.toLowerCase();
-    var nuevoTexto = mensajeEncriptado;
+    var nuevoTexto = ingresoTexto.value;
 
     for (i = 0; i < llaves.length; i++){
         nuevoTexto = nuevoTexto.replaceAll(llaves[i][0],llaves[i][1]);
-    };
-
+    }
     return nuevoTexto;
 }
 
@@ -19,7 +16,7 @@ function botonEncriptar(){
 
     if (ingresoTexto.value != 0){
 
-    let textoEncriptado = encriptar(ingresoTexto.value);
+    var textoEncriptado = encriptar(ingresoTexto.value);
     salidaMensaje.value = textoEncriptado;
     salidaMensaje.style.height = "80%";
     salidaMensaje.style.textAlign = "start";
@@ -32,12 +29,10 @@ function botonEncriptar(){
 
 function desencriptar(mensaje){
 
-    let llaves = [["enter", "e"],["imes", "i"],["ai", "a"],["ober", "o"],["ufat", "u", ]];
-    const mensajeDesencriptado = ingresoTexto.value.toLowerCase();
-    var nuevoTexto = mensajeDesencriptado;
+    var nuevoTexto = ingresoTexto.value;
 
     for (i = 0; i < llaves.length; i++){
-        nuevoTexto = nuevoTexto.replaceAll(llaves[i][0],llaves[i][1]);
+        nuevoTexto = nuevoTexto.replaceAll(llaves[i][1],llaves[i][0]);
     };
 
     return nuevoTexto;
@@ -47,7 +42,7 @@ function botonDesencriptar(){
 
     if (ingresoTexto.value != 0){
 
-    let textoDesencriptado = desencriptar(ingresoTexto.value);
+    var textoDesencriptado = desencriptar(ingresoTexto.value);
     salidaMensaje.value = textoDesencriptado;
     salidaMensaje.style.height = "80%";
     salidaMensaje.style.textAlign = "start";
@@ -60,7 +55,7 @@ function botonDesencriptar(){
 
 function copiar(){
 
-    let contenido = document.getElementById("salida-mensaje");
-    navigator.clipboard.writeText(contenido.value)
+    var contenido =  salidaMensaje;
+    navigator.clipboard.writeText(contenido.value);
     ingresoTexto.value = " ";
 }
