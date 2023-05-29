@@ -5,7 +5,6 @@ var llaves = [["e", "enter"],["i", "imes"],["a", "ai"],["o", "ober"],["u", "ufat
 function encriptar(){
 
     var nuevoTexto = ingresoTexto.value;
-
     for (i = 0; i < llaves.length; i++){
         nuevoTexto = nuevoTexto.replaceAll(llaves[i][0],llaves[i][1]);
     };
@@ -15,7 +14,6 @@ function encriptar(){
 function botonEncriptar(){
 
     if (ingresoTexto.value != 0){
-
     salidaMensaje.value = encriptar();
     salidaMensaje.style.height = "80%";
     salidaMensaje.style.textAlign = "start";
@@ -29,7 +27,6 @@ function botonEncriptar(){
 function desencriptar(){
 
     var nuevoTexto = ingresoTexto.value;
-
     for (i = 0; i < llaves.length; i++){
         nuevoTexto = nuevoTexto.replaceAll(llaves[i][1],llaves[i][0]);
     };
@@ -39,7 +36,6 @@ function desencriptar(){
 function botonDesencriptar(){
 
     if (ingresoTexto.value != 0){
-
     salidaMensaje.value = desencriptar();
     salidaMensaje.style.height = "80%";
     salidaMensaje.style.textAlign = "start";
@@ -50,9 +46,8 @@ function botonDesencriptar(){
 };
 
 function copiar(){
-
-    var contenido =  salidaMensaje;
-    navigator.clipboard.writeText(contenido.value);
+    
+    navigator.clipboard.writeText(salidaMensaje.value);
     ingresoTexto.value = "Ingrese el texto aquí";
 };
 
